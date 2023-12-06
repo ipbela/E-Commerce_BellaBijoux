@@ -1,0 +1,1064 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* transition */
+
+  --cubic-out: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-in: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+
+  /* spacing */
+
+  --section-padding: 60px;
+}
+
+
+/*-----------------------------------*\
+ * #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+a,
+img,
+span,
+table,
+input,
+button,
+tbody,
+ion-icon { display: block; }
+
+input,
+button
+{
+  font: inherit;
+  background: none;
+  border: none;
+}
+
+
+button { cursor: pointer; }
+
+address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+html {
+  font-family: Belleza;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  font-size: 1.6rem;
+  padding-block-start: 90px;
+}
+
+::-webkit-scrollbar { 
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: hsl(0, 0%, 95%); 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: hsl(0, 0%, 80%); 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+  background: hsl(0, 0%, 70%); 
+}
+
+
+/*-----------------------------------*\
+ * #REUSED STYLE
+\*-----------------------------------*/
+
+.container { 
+  padding-inline: 15px; 
+}
+
+.section { 
+  padding-block: var(--section-padding); 
+}
+
+.h1,
+.h2,
+.h3,
+.h4 { 
+  color: black; 
+}
+
+.h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.h2 { 
+  font-size: 2.6rem; 
+}
+
+.h3 { 
+  font-size: 2rem; 
+}
+
+.h4 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.links{
+  color: black;
+  transition: 1s;
+}
+
+.links:hover{
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: 1s;
+}
+
+/*-----------------------------------*\
+ * #HEADER
+\*-----------------------------------*/
+
+.header {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.25s ease;
+  z-index: 4;
+}
+
+.header{ 
+  border-bottom: 1px solid #F2BB2D;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+}
+
+.nav-open-btn {
+  font-size: 30px;
+  background: #F2BB2D;
+  color: rgb(0, 0, 0, 0.6);
+  padding: 8px;
+  transition: 0.5s;
+}
+
+.nav-open-btn:is(:hover, :focus) { 
+  color: white;
+  padding: 10px; 
+  transition: 0.5s;
+}
+
+.nav-open-btn ion-icon { 
+  --ionicon-stroke-width: 40px;
+}
+
+.navbar {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 100%;
+  max-width: 270px;
+  height: 100%;
+  border-right: 5px solid #F2BB2D;
+  font-family: Belleza;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 2;
+  visibility: hidden;
+  transition: 0.25s var(--cubic-out);
+}
+
+.navbar.active {
+  visibility: visible;
+  transform: translateX(280px);
+  transition: 0.5s var(--cubic-in);
+}
+
+.nav-close-btn {
+  color: rgb(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px;
+  font-size: 25px;
+  transition: 0.25s ease;
+}
+
+.nav-close-btn ion-icon { 
+  --ionicon-stroke-width: 55px;
+}
+
+.nav-close-btn:is(:hover, :focus) { 
+  color: #F2BB2D; 
+}
+
+.navbar .logo {
+  padding-block: 50px 10px;
+}
+
+.navbar .logo img { 
+  margin-inline: auto; 
+}
+
+.navbar-list,
+.nav-action-list { 
+  margin: 30px; 
+}
+
+.navbar-list {
+  padding: 20px;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.navbar-link {
+  color: black;
+  padding-block: 10px;
+  transition: 0.5s;
+  font-size: 18px;
+}
+
+.navbar-link:is(:hover, :focus) {
+  color: #F2BB2D; 
+  font-size: 19px; 
+}
+
+.navbar-item:not(:last-child) { 
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  transition: 1s; 
+}
+
+.nav-action-list > li:first-child { 
+  color: #F2BB2D;
+}
+
+.nav-action-btn {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-block: 10px;
+  transition: 1s;
+}
+
+.nav-action-btn:is(:hover, :focus) {
+  font-size: 18px; 
+  color: #F2BB2D; 
+}
+
+.nav-action-btn ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 25px;
+}
+
+.search-input{
+  width: 200px;
+  height: 30px;
+  position: relative;
+  border-radius: 2%;
+  outline: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  background-color: #F8F7F7;
+}
+
+.search-input:focus{
+  border: 1px solid #F2BB2D;
+}
+
+.nav-action-badge {
+  margin-left: auto;
+  font-size: 10px;
+  background: #F2BB2D;
+  color: black;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 500;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.6);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*-----------------------------------*\
+ * #CARRINHO
+\*-----------------------------------*/
+
+section{
+  display: flex;
+}
+
+.first{
+  width: 1200px;
+}
+
+.titulo{
+  display: flex;
+}
+
+.titulo img{
+  margin: 50px 30px 0 230px;
+}
+
+.titulo h1{
+  margin: 60px 0 0 0;
+  font-weight: 200;
+}
+
+.container-roupas{
+  max-width: 790px;
+  margin: 50px 0 0 245px;
+}
+
+.product{
+  margin-bottom: 50px;
+  display: flex;
+  border: 2px solid #F2BB2D;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.product img{
+  padding: 30px 0 30px 30px;
+}
+
+.infos{
+  margin: 30px 0 0 30px;
+}
+
+.infos p{
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.infos h6{
+  font-size: 2rem;
+  border-bottom: 1px solid #F2BB2D;
+  padding-bottom: 10px;
+  font-weight: 100;
+}
+
+.infos h5{
+  font-size: 2.5rem;
+  margin-top: 60px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.infos2{
+  display: flex;
+}
+
+.infos2 img{
+  margin-top: 30px;
+}
+
+.limpar{
+  width: 200px;
+  height: 45px;
+  color: black;
+  margin-top: 40px;
+  background-color: #F2BB2D;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 1s;
+  margin: 20px 0 0 250px;
+}
+
+.limpar:hover{
+  scale: 1.05;
+  color: white;
+  transition: 0.7s;
+}
+
+.second{
+  width: 350px;
+  height: 400px;
+  margin-top: 160px;
+}
+
+.resumo{
+  font-size: 2.5rem;
+  text-align: left;
+  border-bottom: 2px solid #F2BB2D;
+  padding: 15px;
+  font-weight: 200;
+}
+
+.finalizar{
+  width: 200px;
+  height: 45px;
+  color: black;
+  margin-top: 40px;
+  background-color: #F2BB2D;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 1s;
+  margin-left: 75px;
+}
+
+.finalizar:hover{
+  scale: 1.05;
+  color: white;
+  transition: 0.7s;
+}
+
+.continue{
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+svg{
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+.remove{
+  width: 50px;
+  height: 40px;
+  color: black;
+  margin-top: 60px;
+  margin-left: 10px;
+}
+
+.remove:hover{
+  transition: 0.7s;
+  color: #F2BB2D;
+}
+
+#total{
+  font-size: 2rem;
+  margin: 50px 0 80px 20px;
+  font-weight: 200;
+  word-spacing: 2px;
+  border: 2px solid #F2BB2D;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/*-----------------------------------*\
+ * #ENDERECO
+\*-----------------------------------*/
+
+.endereco{
+  border: 2px solid #F2BB2D;
+  margin: 120px 0 0 0;
+  width: 600px;
+  margin-left: 245px;
+  padding: 5rem;
+}
+
+.endereco h1{
+  margin-bottom: 30px;
+  font-weight: 200;
+}
+
+.form-endereco label{
+  font-size: 1.8rem;
+}
+
+.input-endereco{
+  border: 2px solid #F2BB2D;
+  margin: 8px 0 20px 0;
+  width: 50rem;
+  height: 3.5rem;
+  padding: 12px;
+  font-size: 1.8rem;
+}
+
+.enviar{
+  width: 120px;
+  height: 45px;
+  color: black;
+  margin-top: 40px;
+  background-color: #F2BB2D;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 1s;
+}
+
+.enviar:hover{
+  color: white;
+  transition: 0.7s;
+}
+
+/*-----------------------------------*\
+ * #FOOTER
+\*-----------------------------------*/
+
+.footer { 
+  font-family: Belleza; 
+}
+
+.footer-top { 
+  background: #F2BB2D; 
+  margin-top: 50px;
+}
+
+.logo_footer{
+  width: 20%;
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -40px 0 0 5px;
+  float: right;
+}
+
+.social-link {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.social-link:is(:hover, :focus) {
+  background: #F2BB2D;
+}
+
+.footer-bottom {
+  background: #F2BB2D;
+  padding-block: 10px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+/*-----------------------------------*\
+ * #GO TOP
+\*-----------------------------------*/
+
+.go-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #F2BB2D;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border: 4px solid white;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.go-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-top-btn:is(:hover, :focus) { 
+  background: white; 
+  border: 4px solid #F2BB2D; 
+}
+
+/*-----------------------------------*\
+ * #MEDIA QUERIES
+
+  Principais: mobile max,480, 
+  tablets min,481 and max,768
+  laptops min,769 and max,1024
+  desktops min,1025 and max,1500
+  ...orientações...orientation:landscape(h) w > h
+
+\*-----------------------------------*/
+
+
+ @media (max-width: 480px) {
+
+  .has-scrollbar > li { min-width: calc(50% - 12.5px); }
+
+  section{
+    display: block;
+  }
+
+  .first .titulo{
+    gap: 15px;
+  }
+
+  .first .titulo img{
+    margin: 50px 0 0 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .container-roupas{
+    margin: 50px 0 0 30px;
+    width: 250px;
+  }
+
+  .product{
+    display: block;
+  }
+
+  .product img{
+    width: 220px;
+    padding: 20px 0 0 25px;
+  }
+
+  .infos{
+    margin: 20px 0 0 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .infos p{
+    font-size: 2.5rem;
+  }
+
+  .infos h6{
+    font-size: 1.8rem;
+  }
+
+  .infos2{
+    margin: 0 0 0 20px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .limpar{
+    margin: 0 0 0 55px;
+  }
+
+  .second{
+    margin: 60px 0 0 0;
+    text-align: center;
+  }
+
+  .resumo{
+    margin: 0 0 0 57px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  #total{
+    width: 250px;
+    margin: 30px 0 0 28px;
+  }
+
+  .finalizar{
+    margin: 30px 0 0 50px;
+  }
+
+  .continue{
+    margin: 30px 0 0 -50px;
+  }
+
+  .endereco{
+    margin: 25px 0 90px 25px;
+    width: 250px;
+  }
+
+  .endereco h1{
+    font-size: 2.5rem;
+  }
+
+  .input-endereco{
+    width: 170px;
+  }
+
+  .footer-top{
+    margin-top: -70px;
+  }
+
+  .go-top-btn {
+    padding: 15px;
+    border-width: 6px;
+    bottom: 30px;
+    right: 30px;
+    margin-right: 900px;
+  }
+  
+}
+
+@media (min-width: 481px) and (max-width:768px){
+
+  .footer-top{
+    margin-top: -70px;
+  }
+
+  .container { max-width: 720px; }
+
+  section{
+    display: block;
+  }
+
+  .first .titulo{
+    gap: 15px;
+  }
+
+  .first .titulo img{
+    margin: 50px 0 0 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .container-roupas{
+    margin: 50px 0 0 45px;
+    width: 400px;
+  }
+
+  .product{
+    display: block;
+  }
+
+  .product img{
+    width: 220px;
+    padding: 20px 0 0 25px;
+    margin-left: 70px;
+  }
+
+  .infos{
+    margin: 20px 0 0 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .infos p{
+    font-size: 2.5rem;
+  }
+
+  .infos h6{
+    font-size: 1.8rem;
+  }
+
+  .infos2{
+    margin: 0 0 0 100px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .limpar{
+    margin: 0 0 0 140px;
+  }
+
+  .second{
+    margin: 60px 0 0 0;
+    text-align: center;
+  }
+
+  .resumo{
+    margin: 0 0 0 145px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  #total{
+    width: 400px;
+    margin: 30px 0 0 42px;
+  }
+
+  .finalizar{
+    margin: 30px 0 0 140px;
+  }
+
+  .continue{
+    margin: 30px 0 0 125px;
+  }
+
+  .endereco{
+    margin: 25px 0 90px 25px;
+    width: 440px;
+  }
+
+  .endereco h1{
+    font-size: 2.5rem;
+  }
+
+  .input-endereco{
+    width: 350px;
+  }
+
+  .go-top-btn {
+    padding: 15px;
+    border-width: 6px;
+    bottom: 30px;
+    right: 30px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width:1024px){
+  section{
+    display: block;
+  }
+
+  .first .titulo{
+    gap: 15px;
+  }
+
+  .first .titulo img{
+    margin: 50px 0 0 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .container-roupas{
+    margin: 50px 0 0 45px;
+    width: 680px;
+  }
+
+  .product img{
+    width: 220px;
+    padding: 10px 0 10px 10px;
+    margin-left: 10px;
+  }
+
+  .infos{
+    margin: 10px 0 0 20px;
+    padding: 20px;
+  }
+
+  .infos p{
+    font-size: 2.5rem;
+  }
+
+  .infos h6{
+    font-size: 1.8rem;
+  }
+
+  .infos2{
+    padding: 0;
+  }
+
+  .limpar{
+    margin: 0 0 0 40px;
+  }
+
+  .second{
+    margin: 60px 0 0 0;
+    text-align: center;
+  }
+
+  .resumo{
+    margin: 0 0 0 50px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  #total{
+    width: 680px;
+    margin: 30px 0 0 42px;
+  }
+
+  .finalizar{
+    margin: 30px 0 0 40px;
+  }
+
+  .continue{
+    margin: 30px 70px 0 0;
+  }
+
+  .endereco{
+    margin: 25px 0 90px 50px;
+    width: 680px;
+  }
+
+  .endereco h1{
+    font-size: 3rem;
+  }
+
+  .input-endereco{
+    width: 500px;
+  }
+}
+
+/* MEDIA NAVBAR */
+
+@media (min-width: 980px){
+
+  .container{
+    max-width: 1700px;
+    gap: 50px;
+  }
+
+  .logo{
+    margin-left: 200px;
+  }
+
+  .has-scrollbar > li { min-width: calc(33.33% - 16.66px); }
+
+  .nav-open-btn,
+  .nav-close-btn,
+  .navbar .logo,
+  .nav-action-text,
+  .overlay { display: none;}
+
+  .navbar,
+  .navbar-list,
+  .nav-action-list { all: unset; }
+
+  .navbar-item:not(:last-child) { border: none; }
+
+  .navbar-list,
+  .nav-action-list { display: flex; }
+
+  .nav-action-list { gap: 20px; }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .search-icon{
+    margin-left: 30px;
+  }
+
+  .navbar-list {
+    margin-inline: auto;
+    gap: 50px;
+  }
+
+  .nav-action-list > li:first-child { display: block; }
+
+  .nav-action-badge ion-icon { --ionicon-stroke-width: 30px; }
+
+  .nav-action-badge {
+    position: absolute;
+    top: 5px;
+    right: -12px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width:1500px){
+
+  .first .titulo{
+    gap: 15px;
+  }
+
+  .first .titulo img{
+    margin: 50px 0 0 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .container-roupas{
+    margin: 50px 0 0 60px;
+    width: 680px;
+  }
+
+  .product img{
+    width: 220px;
+    padding: 10px 0 10px 10px;
+    margin-left: 10px;
+  }
+
+  .infos{
+    margin: 10px 0 0 20px;
+    padding: 20px;
+  }
+
+  .infos p{
+    font-size: 2.5rem;
+  }
+
+  .infos h6{
+    font-size: 1.8rem;
+  }
+
+  .infos2{
+    padding: 0;
+  }
+
+  .limpar{
+    margin: 0 0 0 40px;
+  }
+
+  .second{
+    margin: 60px 0 0 0;
+    text-align: center;
+  }
+
+  .resumo{
+    margin: 0 0 0 50px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  #total{
+    width: 300px;
+    margin: 30px 0 0 42px;
+  }
+
+  .finalizar{
+    margin: 30px 0 0 40px;
+  }
+
+  .continue{
+    margin: 30px 70px 0 0;
+  }
+
+  .endereco{
+    margin: 25px 0 90px 50px;
+    width: 680px;
+  }
+
+  .endereco h1{
+    font-size: 3rem;
+  }
+
+  .input-endereco{
+    width: 500px;
+  }
+}

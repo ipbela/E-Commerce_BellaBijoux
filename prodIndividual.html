@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Preenche toda a tela do dispositivo-->
-  <title>Bella Bijoux</title>
+  <title>Produto Individual</title>
+  <script src="./js/data.js"></script>
+  <script src="./js/produtoInd.js" defer></script>
 
   <!-- 
     - favicon
@@ -15,7 +17,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/styleProdInd.css">
 
 </head>
 
@@ -88,13 +90,16 @@
           <li>
             <button class="nav-action-btn">
               <a href="favoritos.html" style="color: black;"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon></a>
+
               <a href="favoritos.html" style="color: black;"><span class="nav-action-text">Favoritos</span></a>
+
             </button>
           </li>
 
           <li>
             <button class="nav-action-btn">
               <a href="carrinho.html" style="color: black;"><ion-icon name="bag-outline" aria-hidden="true"></ion-icon></a>
+
               <a href="carrinho.html" style="color: black;"><data class="nav-action-text" value="">Carrinho: </data></a>
             </button>
           </li>
@@ -106,151 +111,42 @@
     </div>
   </header>
 
-  <main>
-    <article>
+  <!-- 
+    - #PRODUTO INDIVIDUAL
+  -->
 
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero">
-        <div class="container">
-          
-
-          <h2 class="h1 hero-title">
-            Diamantes <strong>Nova Coleção</strong>
-          </h2>
-
-          <p class="hero-text">
-          Descubra a deslumbrante nova coleção de diamantes. Cada peça é uma obra-prima única, brilhando com o esplendor e a 
-          elegância que só os diamantes autênticos podem oferecer. Adorne-se com a beleza eterna da natureza e ilumine cada momento com o brilho 
-          incomparável dos nossos diamantes.
-          </p>
-
-          <button class="btn btn-primary">
-            <a href="produtos.html"><span>Compre Agora</span></a>
-
-            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-          </button>
-
+    <div class="container-product">
+        <div class="first-container">
+            <img src="" id="img">
         </div>
-      </section>
+    
+        <div class="second-container">
+            <span id="product-category"></span>
+            <span id="product-name"></span>
+            <span id="product-description"></span>
+            <p id="product-price-container">R$ <span id="product-price"></span>,00</p>
 
-      <!--
-        - #COLLECTION
-      -->
-
-      <div class="sub">
-        <h2 style="margin-bottom: 15px;"><span>CATEGORIAS</span></h2>
-        <p>PESQUISE POR CATEGORIA</p>
-      </div>
-
-      <div class="card-container">
-        <div class="card">
-          <a href="produtos.html"><img src="./imgs/colares/colar10.png" alt="Colar"></a>
-          <div class="card-content">
-            <h3>Colares</h3>
-          </div>
+            <div class="buttons">
+              <button class="button-carrinho" type="submit" onclick="addToCart()">Adicionar ao Carrinho</button>
+              <button class="heart" type="submit" onclick="addToFavs()"><svg xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 24 24"><path fill="currentColor" d="M11.98 19.094q-.292 0-.577-.106t-.503-.323L9.752 17.63q-2.67-2.425-4.71-4.717Q3 10.622 3 8.15q0-1.908 1.296-3.204Q5.592 3.65 7.5 3.65q1.094 0 2.279.553q1.184.553 2.221 2.085q1.037-1.532 2.221-2.085q1.185-.553 2.279-.553q1.908 0 3.204 1.296Q21 6.242 21 8.15q0 2.529-2.125 4.862q-2.125 2.332-4.652 4.623l-1.142 1.03q-.218.218-.513.323t-.587.106Zm-.468-11.767q-.899-1.448-1.868-2.063Q8.675 4.65 7.5 4.65q-1.5 0-2.5 1t-1 2.5q0 1.108.627 2.272q.627 1.165 1.684 2.386q1.056 1.22 2.428 2.498q1.373 1.277 2.857 2.629q.173.153.404.153t.404-.153q1.484-1.352 2.857-2.63q1.372-1.276 2.428-2.497q1.057-1.221 1.684-2.386Q20 9.258 20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2.144.614q-.97.615-1.868 2.063q-.078.135-.213.202T12 7.596t-.275-.067q-.135-.067-.213-.202ZM12 11.398Z"/></svg></button>
+            </div>              
+            
         </div>
+    </div>
 
-        <div class="card">
-          <a href="produtos.html"><img src="./imgs/aneis/anel10.png" alt="Anéis"></a>
-          <div class="card-content">
-            <h3>Anéis</h3>
-          </div>
-        </div>
+  <!-- 
+    - #ALERT
+  -->
 
-        <div class="card">
-          <a href="produtos.html"><img src="./imgs/pulseiras/pulseira10.png" alt="Pulseiras"></a>
-          <div class="card-content">
-            <h3>Pulseiras</h3>
-          </div>
-        </div>
+  <div id="msg" class="mensagem">Produto adicionado ao carrinho!<br>Clique aqui para verificar seu carrinho de compras: 
+    <br><a href="carrinho.html" class="linkCarrinho">Carrinho de Compras</a>
+    <button id="fechar" onclick="hide()" class="alert">Fechar</button>
+  </div>
 
-        <div class="card">
-          <a href="produtos.html"><img src="./imgs/brincos/brinco9.png" alt="Brincos"></a>
-          <div class="card-content">
-            <h3>Brincos</h3>
-          </div>
-        </div>
-
-        <div class="card">
-          <a href="produtos.html"><img src="./imgs/pingentes/p10.png" alt="Pingentes"></a>
-          <div class="card-content">
-            <h3>Pingentes</h3>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 
-        - #SOBRE NÓS
-      -->
-
-      <div class="sub">
-        <h2 style="margin-bottom: 15px;"><span>SOBRE NÓS</span></h2>
-        <p><a class="links" href="./sobreNos.html">CONHEÇA AS NOSSAS VANTAGENS</a></p>
-      </div>
-
-      <div class="infos">
-        
-        <div class="info">
-          <img src="./imgs/truck.png" alt="Entrega Rápida">
-          <div class="info-content">
-            <h3>RAPIDEZ NA ENTREGA</h3>
-          </div>
-        </div>
-
-        <div class="info">
-          <img src="./imgs/garantia.png" alt="Garantia">
-          <div class="info-content">
-            <h3>GARANTIA</h3>
-          </div>
-        </div>
-
-        <div class="info">
-          <img src="./imgs/seg.png" alt="Segurança">
-          <div class="info-content">
-            <h3>SEGURANÇA</h3>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- 
-        - #CONTATO
-      -->
-
-      <div class="sub">
-        <h2 style="margin-bottom: 15px;"><span>CONTATO</span></h2>
-        <p><a class="links" href="./contato.html">ENTRE EM CONTATO COM A GENTE</a></p>
-      </div>
-
-      <div class="contacts">
-        
-        <div class="contact">
-          <img src="./imgs/phone.png" alt="TELEFONE">
-          <div class="contact-content">
-            <h3>Entre em contato pelo telefone 0800 000 0000</h3>
-          </div>
-        </div>
-
-        <div class="contact">
-          <img src="./imgs/email.png" alt="EMAIL">
-          <div class="contact-content">
-            <h3>Entre em contato pelo email bellabijoux@loja.com</h3>
-          </div>
-        </div>
-
-        <div class="contact">
-          <img src="./imgs/map.png" alt="ENDEREÇO">
-          <div class="contact-content">
-            <h3>Vá até a loja! Rua das Alamedas, 111. São Paulo, Brasil</h3>
-          </div>
-        </div>
-
-      </div>
-
+  <div id="msgFav" class="mensagem">Produto adicionado aos favoritos!<br>Clique aqui para verificar seus itens favoritos: 
+    <br><a href="favoritos.html" class="linkCarrinho">Favoritos</a>
+    <button id="fechar" onclick="hideFavs()" class="alert">Fechar</button>
+  </div>
 
   <!-- 
     - #FOOTER

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registro</title>
+    <link rel="stylesheet" href="./css/styleLR.css">
+</head>
+<body>
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Login</button>
+            <button type="button" class="toggle-btn" onclick="cadastro()">Cadastro</button>
+        </div>
+
+        <ul class="social-list">
+            <li>
+                <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+        </ul>
+
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" placeholder="Entre com o usuário" id="user" required>
+            <input type="text" class="input-field" placeholder="Entre com a senha" id="pass" required>
+            <button type="submit" class="submit-btn" style="position: relative; bottom: -60px;">Entrar</button>
+        </form>
+
+        <form id="cadastro" class="input-group">
+            <input type="text" class="input-field" placeholder="Entre com o usuário" id="" required>
+            <input type="email" class="input-field" placeholder="Entre com o email" id="" required>
+            <input type="telefone" class="input-field" placeholder="Entre com o seu telefone" id="" required>
+            <input type="text" class="input-field" placeholder="Entre com a senha" id="" required>
+            <input type="checkbox" class="chech-box"><span>Eu concordo com os termos de uso</span>
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+    </div>
+
+    <script>
+
+        var log = document.getElementById("login");
+        var cad = document.getElementById("cadastro");
+        var btn = document.getElementById("btn");
+
+        function cadastro(){
+            log.style.left = "-550px";
+            cad.style.left = "120px";
+            btn.style.left = "110px";
+        }
+
+        function login(){
+            log.style.left = "120px";
+            cad.style.left = "550px";
+            btn.style.left = "0";
+        }
+
+
+    </script>
+
+    <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
