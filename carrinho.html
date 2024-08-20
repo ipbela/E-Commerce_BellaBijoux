@@ -1,255 +1,401 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrinho</title>
 
     <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="/imgs/joias.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="/imgs/joias.png" type="image/svg+xml" />
 
-  <!-- 
+    <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./css/styleCarrinho.css">
+    <link rel="stylesheet" href="./css/styleCarrinho.css" />
 
-  <script src="./js/data.js" defer></script>
-  <script src="./js/carrinho.js" defer></script>
-
-</head>
-<body id="top">
-
-     <!-- 
+    <script src="./js/data.js" defer></script>
+    <script src="./js/carrinho.js" defer></script>
+  </head>
+  <body id="top">
+    <!-- 
     - #HEADER
   -->
 
-  <header class="header" data-header>
-    <div class="container">
-
-      <div class="overlay" data-overlay></div>
-
-      <a href="index.html" class="logo">
-        <img src="./imgs/Logo.png" width="160" height="50" alt="Bella Bijoux Logo">
-      </a>
-
-      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
+    <header class="header" data-header>
+      <div class="container">
+        <div class="overlay" data-overlay></div>
 
         <a href="index.html" class="logo">
-          <img src="./imgs/Logo.png" width="160" height="50" alt="Bella Bijoux Logo">
+          <img
+            src="./imgs/Logo.png"
+            width="160"
+            height="50"
+            alt="Bella Bijoux Logo"
+          />
         </a>
 
-        <ul class="navbar-list">
+        <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
 
-          <li class="navbar-item">
-            <a href="index.html" class="navbar-link">Início</a>
-          </li>
+        <nav class="navbar" data-navbar>
+          <button
+            class="nav-close-btn"
+            data-nav-close-btn
+            aria-label="Close Menu"
+          >
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
 
-          <li class="navbar-item">
-            <a href="produtos.html" class="navbar-link">Produtos</a>
-          </li>
+          <a href="index.html" class="logo">
+            <img
+              src="./imgs/Logo.png"
+              width="160"
+              height="50"
+              alt="Bella Bijoux Logo"
+            />
+          </a>
 
-          <li class="navbar-item">
-            <a href="sobreNos.html" class="navbar-link">Sobre Nós</a>
-          </li>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link">Início</a>
+            </li>
 
-          <li class="navbar-item">
-            <a href="contato.html" class="navbar-link">Contato</a>
-          </li>
+            <li class="navbar-item">
+              <a href="produtos.html" class="navbar-link">Produtos</a>
+            </li>
 
-        </ul>
+            <li class="navbar-item">
+              <a href="sobreNos.html" class="navbar-link">Sobre Nós</a>
+            </li>
 
-        <ul class="nav-action-list">
+            <li class="navbar-item">
+              <a href="contato.html" class="navbar-link">Contato</a>
+            </li>
+          </ul>
 
-          <li>
-            <button class="nav-action-btn">
-              <ion-icon name="search-outline" aria-hidden="true" class="search-icon"></ion-icon>
-              <input type="text" class="search-input" id="search-input">  
-            </button>
-          </li>
+          <ul class="nav-action-list">
+            <li>
+              <button class="nav-action-btn">
+                <ion-icon
+                  name="search-outline"
+                  aria-hidden="true"
+                  class="search-icon"
+                ></ion-icon>
+                <input type="text" class="search-input" id="search-input" />
+              </button>
+            </li>
 
-          <li>
-            <a href="register.html" class="nav-action-btn">
-              <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+            <li>
+              <a href="register.html" class="nav-action-btn">
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-              <span class="nav-action-text">Login/Registro</span>
-            </a>
-          </li>
+                <span class="nav-action-text">Login/Registro</span>
+              </a>
+            </li>
 
-          <li>
-            <button class="nav-action-btn">
-              <a href="favoritos.html" style="color: black;"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon></a>
-              <a href="favoritos.html" style="color: black;"><span class="nav-action-text">Favoritos</span></a>
-            </button>
-          </li>
+            <li>
+              <button class="nav-action-btn">
+                <a href="favoritos.html" style="color: black"
+                  ><ion-icon name="heart-outline" aria-hidden="true"></ion-icon
+                ></a>
+                <a href="favoritos.html" style="color: black"
+                  ><span class="nav-action-text">Favoritos</span></a
+                >
+              </button>
+            </li>
 
-          <li>
-            <button class="nav-action-btn">
-              <a href="carrinho.html" style="color: black;"><ion-icon class="car" name="bag-outline" aria-hidden="true"></ion-icon></a>
-              <a href="carrinho.html" style="color: black;"><data class="nav-action-text" value="" >Carrinho: </data></a>
-            </button>
-          </li>
+            <li>
+              <button class="nav-action-btn">
+                <a href="carrinho.html" style="color: black"
+                  ><ion-icon
+                    class="car"
+                    name="bag-outline"
+                    aria-hidden="true"
+                  ></ion-icon
+                ></a>
+                <a href="carrinho.html" style="color: black"
+                  ><data class="nav-action-text" value="">Carrinho: </data></a
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-        </ul>
-
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- 
+    <!-- 
     - #CARRINHO
   -->
-  <section>
+    <section>
+      <div class="first">
+        <div class="titulo">
+          <img
+            src="imgs/car.png"
+            alt="Icone Carrinho de Compras"
+            width="60px"
+          />
+          <h1>Carrinho de Compras</h1>
+        </div>
 
-    <div class="first">
-      <div class="titulo">
-        <img src="imgs/car.png" alt="Icone Carrinho de Compras" width="60px">
-        <h1>Carrinho de Compras</h1>
+        <div class="container-roupas" id="carrinho"></div>
+
+        <button type="button" class="limpar" onclick="limparCarrinho()">
+          LIMPAR CARRINHO
+        </button>
       </div>
+
+      <div class="second">
+        <div class="total">
+          <h6 class="resumo">Resumo da compra</h6>
+          <h2 id="total"></h2>
+          <a href="#endereco"
+            ><button type="submit" class="finalizar" onclick="scrollToFinalizar()">
+              FINALIZAR COMPRA
+            </button></a
+          >
+          <a href="produtos.html" class="continue">CONTINUAR COMPRANDO</a>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="text-final" id="finalizar">
+      Preencha os seus dados para finalizar a compra!
+    </h1>
+
+    <div class="final-second">
+      <div class="endereco" id="endereco">
+        <h1>Endereço</h1>
   
-      <div class="container-roupas" id="carrinho"></div>
-
-      <button type="button" class="limpar" onclick="limparCarrinho()">LIMPAR CARRINHO</button>
-    </div>
-
-    <div class="second">
-
-      <div class="total">
-
-        <h6 class="resumo">Resumo da compra</h6>
-        <h2 id="total"></h2>
-        <a href="#endereco"><button type="submit" class="finalizar">FINALIZAR COMPRA</button></a>
-        <a href="produtos.html" class="continue">CONTINUAR COMPRANDO</a>
-
+        <div class="grid">
+          <form action="" class="form-endereco">
+            <label for="">CEP</label>
+            <input type="number" class="input-endereco-left" id="cep" required />
+  
+            <label for="">Estado</label>
+            <input type="text" class="input-endereco-left" id="estado" required />
+  
+            <label for="">Cidade</label>
+            <input type="text" class="input-endereco-left" id="cidade" required />
+  
+            <label for="">Logradouro</label>
+            <input type="text" class="input-endereco-left" id="logradouro" required />
+          </form>
+  
+          <form action="" class="form-endereco">
+            <label for="">Número</label>
+            <input type="number" class="input-endereco-right" id="numero" required />
+  
+            <label for="">Bairro</label>
+            <input type="text" class="input-endereco-right" id="bairro" required />
+  
+            <label for="">Complemento</label>
+            <input type="text" class="input-endereco-right" id="complemento" required />
+          </form>
+        </div>
       </div>
+      <div class="pessoal" id="endereco">
+        <h1>Dados Pessoais</h1>
 
+        <form action="" class="form-endereco">
+          <label for="">Nome Completo</label>
+          <input type="text" class="input-endereco" id="nome" required />
+
+          <label for="">Email</label>
+          <input type="email" class="input-endereco" id="email" required />
+
+          <label for="">Telefone</label>
+          <input type="tel" class="input-endereco" id="telefone" required />
+
+          <label for="">CPF</label>
+          <input type="text" class="input-endereco" id="cpf" required />
+        </form>
+      </div>
     </div>
 
-  </section>
+    <div class="pagamento" id="endereco">
+      <h1>Forma de Pagamento</h1>
+      <form action="" class="form-endereco">
+        <select
+          name="forma-pagamento"
+          id="forma-pagamento"
+          class="input-endereco-select"
+        >
+          <option value="..." class="opt-select">
+            Selecione uma forma de pagamento:
+          </option>
+          <option value="Boleto" class="opt-select">Boleto</option>
+          <option value="Cartão de Crédito" class="opt-select">
+            Cartão de Crédito
+          </option>
+          <option value="Cartão de Débito" class="opt-select">
+            Cartão de Débito
+          </option>
+          <option value="Pix" class="opt-select">Pix</option>
+        </select>
+        <div id="payment-details" class="payment-details"></div>
+        <button type="submit" class="enviar" onclick="finalizarCompra()">
+          FINALIZAR
+        </button>
+      </form>
+    </div>
 
-  <div class="endereco" id="endereco">
-    <h1>Registre aqui o seu endereço de entrega!</h1>
-    
-    <form action="./adm.html" class="form-endereco">
-
-      <label for="">Nome Completo</label>
-      <input type="text" class="input-endereco" id="nome" required>
-
-      <label for="">Email</label>
-      <input type="email" class="input-endereco" id="email" required>
-
-      <label for="">Telefone</label>
-      <input type="tel" class="input-endereco" id="telefone" required>
-
-      <label for="">CEP</label>
-      <input type="number" class="input-endereco" id="cep" required>
-
-      <label for="">Estado</label>
-      <input type="text" class="input-endereco" id="estado" required>
-
-      <label for="">Cidade</label>
-      <input type="text" class="input-endereco" id="cidade" required>
-
-      <label for="">Logradouro</label>
-      <input type="text" class="input-endereco" id="logradouro" required>
-
-      <label for="">Número</label>
-      <input type="number" class="input-endereco" id="numero" required>
-
-      <label for="">Bairro</label>
-      <input type="text" class="input-endereco" id="bairro" required>
-
-      <label for="">Complemento</label>
-      <input type="text" class="input-endereco" id="complemento" required>
-
-      <button type="submit" class="enviar" onclick="finalizarCompra()">ENVIAR</button>
-
-    </form>
-  </div>
-
-  <!-- 
+    <!-- 
     - #FOOTER
   -->
 
-  <footer class="footer">
+    <footer class="footer">
+      <div class="footer-top section">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="index.html" class="logo_footer">
+              <img
+                src="./imgs/LogoFooter.png"
+                width="160"
+                height="50"
+                alt="Footcap logo"
+              />
+            </a>
 
-    <div class="footer-top section">
-      <div class="container">
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
 
-        <div class="footer-brand">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
 
-          <a href="index.html" class="logo_footer">
-            <img src="./imgs/LogoFooter.png" width="160" height="50" alt="Footcap logo">
-          </a>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2023. Isabela Pereira Leite. Todos os direitos reservados.
-        </p>
-
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2023. Isabela Pereira Leite. Todos os direitos reservados.
+          </p>
+        </div>
       </div>
-    </div>
+    </footer>
 
-  </footer>
-
-  <!-- 
+    <!-- 
     - #GO TO TOP
   -->
 
-  <a href="#top" class="go-top-btn" data-go-top>
-    <ion-icon name="arrow-up-outline"></ion-icon>
-  </a>
+    <a href="#top" class="go-top-btn" data-go-top>
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
 
-
-  <!-- 
+    <!-- 
     - custom js link
   -->
-  <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+      document
+        .getElementById("forma-pagamento")
+        .addEventListener("change", function () {
+          const paymentMethod = this.value;
+          const paymentDetails = document.getElementById("payment-details");
 
-  <!-- 
+          // Reset the payment details content
+          paymentDetails.innerHTML = "";
+
+          if (paymentMethod === "Pix") {
+            // Generate a random key for Pix
+            const pixKey = Math.random().toString(36).substring(2, 15);
+
+            paymentDetails.innerHTML = `
+      <h3 class='title-pix'>Chave Pix</h3>
+      <p class='key-pix'>${pixKey}</p>
+    `;
+          } else if (paymentMethod === "Cartão de Crédito") {
+            paymentDetails.innerHTML = `
+      <h3 class='info-cartao'>Informações do Cartão de Crédito</h3>
+      <div class='col-all'>
+      <div class='col-1'> 
+      <label for="card-number" class='lab'>Número do Cartão</label>
+      <input type="text" id="card-number" class="input-endereco" required />
+
+      <label for="card-name" class='lab'>Nome no Cartão</label>
+      <input type="text" id="card-name" class="input-endereco" required />
+      </div>
+
+      <div class='col-2'>
+      <label for="card-expiry" class='lab'>Validade</label>
+      <input type="month" id="card-expiry" class="input-endereco" required />
+
+      <label for="card-cvv" class='lab'>CVV</label>
+      <input type="text" id="card-cvv" class="input-endereco" required />
+      </div>
+      </div>
+
+      <label for="installments" class='lab'>Parcelamento</label><br/>
+      <select id="installments" class="input-endereco-select" required>
+        <option value="..." class='opt-select'>Selecione uma opção:</option>
+        <option value="1x" class='opt-select'>1x</option>
+        <option value="2x" class='opt-select'>2x</option>
+        <option value="3x" class='opt-select'>3x</option>
+        <option value="4x" class='opt-select'>4x</option>
+        <option value="5x" class='opt-select'>5x</option>
+        <option value="6x" class='opt-select'>6x</option>
+        <option value="10x" class='opt-select'>10x</option>
+        <option value="12x" class='opt-select'>12x</option>
+      </select>
+    `;
+          } else if (paymentMethod === "Cartão de Débito") {
+            paymentDetails.innerHTML = `
+      <h3 class='info-cartao'>Informações do Cartão de Débito</h3>
+      <div class='col-all'>
+      <div class='col-1'>
+      <label for="card-number" class='lab'>Número do Cartão</label>
+      <input type="text" id="card-number" class="input-endereco" required />
+
+      <label for="card-name" class='lab'>Nome no Cartão</label>
+      <input type="text" id="card-name" class="input-endereco" required />
+        </div>
+
+        <div class='col-2'>
+      <label for="card-expiry" class='lab'>Validade</label>
+      <input type="month" id="card-expiry" class="input-endereco" required />
+
+      <label for="card-cvv" class='lab'>CVV</label>
+      <input type="text" id="card-cvv" class="input-endereco" required />
+      </div>
+      </div>
+    `;
+          } else if (paymentMethod === "Boleto") {
+            paymentDetails.innerHTML = `
+      <h3 class='title-pix'>Boleto Bancário</h3>
+      <p class='subtitle-bol'>Código de Barras</p>
+      <p class='cod-boleto'>12345.67890 12345.678901 12345.678901 1 12345678901234</p>
+    `;
+          }
+        });
+    </script>
+
+    <!-- 
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

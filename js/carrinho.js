@@ -61,45 +61,11 @@ function limparCarrinho(){
     location.reload();
 }
 
-function finalizarCompra(){
-    nomeCompleto = document.getElementById('nome').value
-    email = document.getElementById('email').value
-    telefone = document.getElementById('telefone').value
-    cep = document.getElementById('cep').value
-    estado = document.getElementById('estado').value
-    cidade = document.getElementById('cidade').value
-    logradouro = document.getElementById('logradouro').value
-    numero = document.getElementById('numero').value
-    bairro = document.getElementById('bairro').value
-    complemento = document.getElementById('complemento').value
+function scrollToFinalizar() {
+    document.getElementById("finalizar").scrollIntoView({ behavior: "smooth" });
+}
 
-    local = localStorage.getItem('compras');
-    compras = JSON.parse(local) ? JSON.parse(local) : []
-
-    carrinho.forEach(item => {
-        products.forEach(product => {
-            if(product.id == item){
-                itemArray = {
-                    "Id": item,
-                    "Produto": product.title,
-                    "Preco": product.price,
-                    "Nome Completo": nomeCompleto,
-                    "Email": email,
-                    "Telefone": telefone,
-                    "CEP": cep,
-                    "Estado": estado,
-                    "Cidade": cidade,
-                    "Logradouro": logradouro,
-                    "Numero": numero,
-                    "Bairro": bairro,
-                    "Complemento": complemento
-                };
-                compras.push(itemArray);
-            }else{
-                console.log("teste")
-            }
-        });
-    });
-
-    localStorage.setItem('compras', JSON.stringify(compras));
+function finalizarCompra() {
+    alert('Compra finalizada!');
+    localStorage.clear();
 }
